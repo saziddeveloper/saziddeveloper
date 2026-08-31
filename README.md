@@ -156,12 +156,14 @@ Explore All Repositories →
 
 ## `06 // CURRENTLY`
 
-| Area        | Focus                              |
-| ----------- | ---------------------------------- |
-| `BUILDING`  | Full-stack web applications        |
-| `LEARNING`  | Advanced MERN development          |
-| `EXPLORING` | Modern developer tools & workflows |
-| `GOAL`      | Building production-ready software |
+| Area        | Focus                                               |
+| ----------- | --------------------------------------------------- |
+| `BUILDING`  | Full-stack web applications & SaaS products         |
+| `LEARNING`  | TypeScript • Next.js • PostgreSQL • System Design   |
+| `EXPLORING` | AI Engineering • LLMs • RAG • AI Agents             |
+| `DEPLOYING` | Vercel • Docker • GitHub Actions • Cloud            |
+| `IMPROVING` | Software Architecture • Testing • Security          |
+| `GOAL`      | Becoming an AI-Powered Full-Stack Software Engineer |
 
 ---
 
