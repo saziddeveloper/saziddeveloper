@@ -76,7 +76,7 @@ My current focus is improving my full-stack engineering skills and turning ideas
 
 ### AI Engineering
 <p>
-  <img src="https://skillicons.dev/icons?i=openai" />
+  <img src="https://skillicons.dev/icons?i=openai,claude,cloude-cpde" />
 </p>
 
 ### DevOps & Cloud
