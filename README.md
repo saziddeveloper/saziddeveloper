@@ -2,9 +2,9 @@
 
 # ❗ SAZIDDEVELOPER ❗
 
-### MERN Stack Developer
+### AI-Powered Full-Stack Software Engineer
 
-Building modern web experiences with JavaScript, React & Node.js.
+Building scalable web applications and intelligent software with TypeScript, React, Next.js, Node.js, PostgreSQL, AI Agents, RAG, Cloud & DevOps.
 
 <a href="https://saziddeveloper.github.io/">
   <img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=google-chrome&logoColor=black" />
