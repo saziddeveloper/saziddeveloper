@@ -17,7 +17,7 @@ Building modern web experiences with JavaScript, React & Node.js.
 
 ---
 
-## `01 // SAZIDDEVELOPER`
+## `01 // Pofile Info`
 
 <table>
 <tr>

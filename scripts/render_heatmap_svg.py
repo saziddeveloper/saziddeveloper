@@ -4,15 +4,27 @@ import json
 import html
 
 
+# ============================================================
+# FILES
+# ============================================================
+
 INPUT = Path("data/contributions.json")
 OUTPUT = Path("contrib-heatmap.svg")
+
+
+# ============================================================
+# SVG SIZE
+# ============================================================
+
+WIDTH = 820
+HEIGHT = 320
+
 
 # ============================================================
 # THEME
 # ============================================================
 
 BG = "#090909"
-PANEL = "#0D0D0D"
 BORDER = "#292929"
 
 TEXT = "#B8B8B8"
@@ -25,12 +37,13 @@ GOLD_4 = "#D4AF37"
 
 
 # ============================================================
-# LOAD DATA
+# LOAD CONTRIBUTION DATA
 # ============================================================
 
 def load_data():
 
     if not INPUT.exists():
+
         raise FileNotFoundError(
             f"Cannot find {INPUT}"
         )
@@ -44,7 +57,7 @@ def load_data():
 
 
 # ============================================================
-# COLORS
+# CONTRIBUTION COLORS
 # ============================================================
 
 def contribution_color(level):
@@ -64,7 +77,7 @@ def contribution_color(level):
 
 
 # ============================================================
-# CALENDAR
+# BUILD CALENDAR
 # ============================================================
 
 def build_calendar(contributions):
@@ -74,54 +87,95 @@ def build_calendar(contributions):
         for item in contributions
     }
 
-    dates = [
-        date.fromisoformat(item["date"])
-        for item in contributions
-    ]
+    dates = []
+
+    for item in contributions:
+
+        try:
+
+            dates.append(
+                date.fromisoformat(
+                    item["date"]
+                )
+            )
+
+        except Exception:
+
+            continue
 
     if not dates:
+
         raise RuntimeError(
-            "No contribution data available."
+            "No valid contribution dates found."
         )
 
-    latest = max(dates)
+    # Use the latest date from the fetched data.
+    last_day = max(dates)
 
-    # GitHub calendar ends on Saturday.
-    while latest.weekday() != 5:
-        latest += timedelta(days=1)
+    # Move to Saturday.
+    while last_day.weekday() != 5:
 
-    # 53 complete weeks.
-    first = latest - timedelta(
-        days=(53 * 7) - 1
+        last_day += timedelta(
+            days=1
+        )
+
+    # 53 weeks.
+    first_day = (
+        last_day
+        - timedelta(
+            days=(53 * 7) - 1
+        )
     )
+
+    # Move to Sunday.
+    while first_day.weekday() != 6:
+
+        first_day -= timedelta(
+            days=1
+        )
 
     cells = []
 
-    current = first
+    current = first_day
 
-    while current <= latest:
+    while current <= last_day:
 
         item = by_date.get(
             current.isoformat(),
+            {}
+        )
+
+        cells.append(
             {
-                "level": 0
+                "date": current,
+                "level": int(
+                    item.get(
+                        "level",
+                        0
+                    )
+                ),
+                "count": int(
+                    item.get(
+                        "count",
+                        0
+                    )
+                )
             }
         )
 
-        cells.append({
-            "date": current,
-            "level": int(
-                item.get("level", 0)
-            )
-        })
+        current += timedelta(
+            days=1
+        )
 
-        current += timedelta(days=1)
-
-    return cells, first, latest
+    return (
+        cells,
+        first_day,
+        last_day
+    )
 
 
 # ============================================================
-# SVG GENERATOR
+# CREATE SVG
 # ============================================================
 
 def create_svg(data):
@@ -141,8 +195,14 @@ def create_svg(data):
         "saziddeveloper"
     )
 
-    cells, first_day, last_day = build_calendar(
-        contributions
+    # --------------------------------------------------------
+    # CALENDAR
+    # --------------------------------------------------------
+
+    cells, first_day, last_day = (
+        build_calendar(
+            contributions
+        )
     )
 
     # --------------------------------------------------------
@@ -153,10 +213,11 @@ def create_svg(data):
     GAP = 3
     STEP = CELL + GAP
 
-    WEEKDAY_WIDTH = 38
-
     COLUMNS = 53
     ROWS = 7
+
+    GRID_X = 55
+    GRID_Y = 104
 
     GRID_WIDTH = (
         COLUMNS * CELL
@@ -167,19 +228,6 @@ def create_svg(data):
         ROWS * CELL
         + (ROWS - 1) * GAP
     )
-
-    GRID_X = 64
-    GRID_Y = 105
-
-    RIGHT_MARGIN = 28
-
-    WIDTH = (
-        GRID_X
-        + GRID_WIDTH
-        + RIGHT_MARGIN
-    )
-
-    HEIGHT = 325
 
     # --------------------------------------------------------
     # METRICS
@@ -206,7 +254,7 @@ def create_svg(data):
     )
 
     # --------------------------------------------------------
-    # CELLS
+    # HEATMAP CELLS
     # --------------------------------------------------------
 
     rendered_cells = []
@@ -233,6 +281,7 @@ def create_svg(data):
         )
 
         level = cell["level"]
+        count = cell["count"]
 
         fill = contribution_color(
             level
@@ -240,10 +289,10 @@ def create_svg(data):
 
         tooltip = (
             f"{current.isoformat()} — "
-            f"activity level {level}/4"
+            f"{count} contributions"
         )
 
-        delay = index * 0.002
+        delay = index * 0.0015
 
         rendered_cells.append(
             f"""
@@ -263,7 +312,7 @@ def create_svg(data):
                         attributeName="opacity"
                         from="0"
                         to="1"
-                        dur="0.3s"
+                        dur="0.25s"
                         begin="{delay:.3f}s"
                         fill="freeze"
                     />
@@ -284,12 +333,15 @@ def create_svg(data):
         1
     )
 
-    # Keep month labels safely inside SVG.
-    MIN_MONTH_X = GRID_X
-    MAX_MONTH_X = (
-        GRID_X
-        + GRID_WIDTH
-        - 25
+    # Width estimate for the longest
+    # three-letter month name.
+    LABEL_WIDTH = 25
+
+    # Minimum distance between labels.
+    LABEL_GAP = 9
+
+    last_label_right = (
+        GRID_X - LABEL_GAP
     )
 
     while cursor <= last_day:
@@ -298,31 +350,51 @@ def create_svg(data):
             cursor - first_day
         ).days
 
-        week = days_from_start // 7
+        week = (
+            days_from_start // 7
+        )
 
         x = (
             GRID_X
             + week * STEP
         )
 
-        # Prevent labels from leaving the SVG.
+        # Keep label inside the grid.
+        max_x = (
+            GRID_X
+            + GRID_WIDTH
+            - LABEL_WIDTH
+        )
+
         x = max(
-            MIN_MONTH_X,
-            min(x, MAX_MONTH_X)
+            GRID_X,
+            min(x, max_x)
         )
 
-        month_labels.append(
-            f"""
-            <text
-                x="{x}"
-                y="91"
-                class="month"
-            >
-                {cursor.strftime("%b")}
-            </text>
-            """
-        )
+        # Don't allow labels to overlap.
+        if (
+            x >=
+            last_label_right
+            + LABEL_GAP
+        ):
 
+            month_labels.append(
+                f"""
+                <text
+                    x="{x}"
+                    y="90"
+                    class="month"
+                >
+                    {cursor.strftime("%b")}
+                </text>
+                """
+            )
+
+            last_label_right = (
+                x + LABEL_WIDTH
+            )
+
+        # Move to next month.
         if cursor.month == 12:
 
             cursor = date(
@@ -371,7 +443,7 @@ def create_svg(data):
         weekday_labels.append(
             f"""
             <text
-                x="18"
+                x="12"
                 y="{y}"
                 class="weekday"
             >
@@ -381,14 +453,10 @@ def create_svg(data):
         )
 
     # --------------------------------------------------------
-    # FOOTER
+    # LEGEND
     # --------------------------------------------------------
 
-    footer_y = 300
-
-    legend_x = (
-        WIDTH - 235
-    )
+    legend_x = 575
 
     # --------------------------------------------------------
     # SVG
@@ -410,7 +478,7 @@ def create_svg(data):
 .title {{
     fill: {TEXT};
     font-family: monospace;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
 }}
@@ -456,7 +524,9 @@ def create_svg(data):
 </defs>
 
 
-<!-- BACKGROUND -->
+<!-- ======================================================
+     BACKGROUND
+     ====================================================== -->
 
 <rect
     x="1"
@@ -470,37 +540,41 @@ def create_svg(data):
 />
 
 
-<!-- HEADER -->
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
 
 <text
-    x="28"
-    y="35"
+    x="24"
+    y="34"
     class="title"
 >
     CONTRIBUTION MATRIX
 </text>
 
 <text
-    x="28"
-    y="55"
+    x="24"
+    y="54"
     class="subtitle"
 >
     @{html.escape(username)} • GitHub activity
 </text>
 
 
-<!-- METRICS -->
+<!-- ======================================================
+     METRICS
+     ====================================================== -->
 
 <text
-    x="{WIDTH - 300}"
-    y="25"
+    x="475"
+    y="24"
     class="metric-label"
 >
     TOTAL
 </text>
 
 <text
-    x="{WIDTH - 300}"
+    x="475"
     y="46"
     class="metric-value"
 >
@@ -509,15 +583,15 @@ def create_svg(data):
 
 
 <text
-    x="{WIDTH - 205}"
-    y="25"
+    x="565"
+    y="24"
     class="metric-label"
 >
     STREAK
 </text>
 
 <text
-    x="{WIDTH - 205}"
+    x="565"
     y="46"
     class="metric-value"
 >
@@ -526,15 +600,15 @@ def create_svg(data):
 
 
 <text
-    x="{WIDTH - 100}"
-    y="25"
+    x="660"
+    y="24"
     class="metric-label"
 >
     BEST
 </text>
 
 <text
-    x="{WIDTH - 100}"
+    x="660"
     y="46"
     class="metric-value"
 >
@@ -542,34 +616,42 @@ def create_svg(data):
 </text>
 
 
-<!-- MONTHS -->
+<!-- ======================================================
+     MONTH LABELS
+     ====================================================== -->
 
 {''.join(month_labels)}
 
 
-<!-- WEEKDAYS -->
+<!-- ======================================================
+     WEEKDAY LABELS
+     ====================================================== -->
 
 {''.join(weekday_labels)}
 
 
-<!-- CONTRIBUTION CELLS -->
+<!-- ======================================================
+     HEATMAP
+     ====================================================== -->
 
 {''.join(rendered_cells)}
 
 
-<!-- LEGEND -->
+<!-- ======================================================
+     LEGEND
+     ====================================================== -->
 
 <text
     x="{legend_x}"
-    y="279"
+    y="280"
     class="subtitle"
 >
     LESS
 </text>
 
 <rect
-    x="{legend_x + 36}"
-    y="270"
+    x="{legend_x + 35}"
+    y="271"
     width="11"
     height="11"
     rx="2"
@@ -577,8 +659,8 @@ def create_svg(data):
 />
 
 <rect
-    x="{legend_x + 53}"
-    y="270"
+    x="{legend_x + 52}"
+    y="271"
     width="11"
     height="11"
     rx="2"
@@ -586,8 +668,8 @@ def create_svg(data):
 />
 
 <rect
-    x="{legend_x + 70}"
-    y="270"
+    x="{legend_x + 69}"
+    y="271"
     width="11"
     height="11"
     rx="2"
@@ -595,8 +677,8 @@ def create_svg(data):
 />
 
 <rect
-    x="{legend_x + 87}"
-    y="270"
+    x="{legend_x + 86}"
+    y="271"
     width="11"
     height="11"
     rx="2"
@@ -604,27 +686,29 @@ def create_svg(data):
 />
 
 <text
-    x="{legend_x + 104}"
-    y="279"
+    x="{legend_x + 103}"
+    y="280"
     class="subtitle"
 >
     MORE
 </text>
 
 
-<!-- FOOTER -->
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
 
 <text
-    x="28"
-    y="{footer_y}"
+    x="24"
+    y="295"
     class="subtitle"
 >
     Longest streak: {longest_streak} days
 </text>
 
 <text
-    x="28"
-    y="316"
+    x="24"
+    y="311"
     class="subtitle"
 >
     Updated automatically • github.com/{html.escape(username)}
@@ -656,10 +740,7 @@ def main():
         f"Generated {OUTPUT}"
     )
 
-    print(
-        f"Canvas: {WIDTH if 'WIDTH' in locals() else 'dynamic'}"
-    )
-
 
 if __name__ == "__main__":
+
     main()
