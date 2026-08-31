@@ -49,11 +49,13 @@ Building scalable web applications and intelligent software with TypeScript, Rea
 
 ## `03 // ABOUT ME`
 
-I'm **Ashaduzzaman Sazid**, a MERN Stack Developer focused on building practical, responsive and modern web applications.
+I'm **Ashaduzzaman Sazid**, a Full-Stack Developer focused on building practical, responsive, and production-oriented web applications.
 
-I enjoy working across the full development cycle — from designing interfaces and building React applications to developing Node.js APIs and connecting databases.
+I work across the full development cycle — from crafting modern interfaces with React, Next.js, TypeScript, and Tailwind CSS to building backend systems and APIs with Node.js, Express.js, and database technologies such as MongoDB and PostgreSQL.
 
-My current focus is improving my full-stack engineering skills and turning ideas into real, usable products.
+I'm continuously expanding into AI Engineering, exploring LLMs, RAG, AI Agents, embeddings, and intelligent application workflows while strengthening my foundations in software architecture, testing, cloud, and DevOps.
+
+My goal is to build software that isn't just functional, but scalable, maintainable, intelligent, and genuinely useful — growing toward becoming an AI-Powered Full-Stack Software Engineer.
 
 ---
 
