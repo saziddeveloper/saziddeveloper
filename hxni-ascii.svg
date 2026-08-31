@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="800"
+    height="800"
+    viewBox="0 0 800 800"
+>
+
+    <defs>
+
+        <clipPath id="asciiClip">
+            <rect
+                x="0"
+                y="0"
+                width="800"
+                height="800"
+            >
+                <animate
+                    attributeName="width"
+                    from="0"
+                    to="800"
+                    dur="2.2s"
+                    begin="0s"
+                    fill="freeze"
+                />
+            </rect>
+        </clipPath>
+
+        <filter id="glow">
+            <feGaussianBlur
+                stdDeviation="1.5"
+                result="blur"
+            />
+
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+    </defs>
+
+    <rect
+        width="100%"
+        height="100%"
+        rx="28"
+        fill="#0d0d0d"
+        stroke="#3a3a3a"
+        stroke-width="2"
+    />
+
+    <!-- Terminal header -->
+
+    <circle cx="32" cy="32" r="7" fill="#ff5f57"/>
+    <circle cx="56" cy="32" r="7" fill="#febc2e"/>
+    <circle cx="80" cy="32" r="7" fill="#28c840"/>
+
+    <text
+        x="110"
+        y="38"
+        fill="#888888"
+        font-family="monospace"
+        font-size="18"
+    >
+        SAZIDDEVELOPER
+    </text>
+
+    <!-- ASCII portrait -->
+
+    <g
+        clip-path="url(#asciiClip)"
+        filter="url(#glow)"
+    >
+
+        <style>
+            .ascii-line {
+                fill: #EBE1DF;
+                font-family: "Courier New", monospace;
+                font-size: 11px;
+                font-weight: 700;
+                white-space: pre;
+                opacity: 0;
+                animation: fin 0.35s ease-out forwards;
+            }
+
+            @keyframes fin {
+                from {
+                    opacity: 0;
+                    transform: translateX(-8px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        </style>
+
+        
+            <text
+                x="40"
+                y="80"
+                class="ascii-line"
+                style="animation-delay:0.000s"
+            >                                                                                                              </text>
+            
+
+            <text
+                x="40"
+                y="92"
+                class="ascii-line"
+                style="animation-delay:0.025s"
+            >                                                                                                              </text>
+            
+
+            <text
+                x="40"
+                y="104"
+                class="ascii-line"
+                style="animation-delay:0.050s"
+            >                                                       .                                                      </text>
+            
+
+            <text
+                x="40"
+                y="116"
+                class="ascii-line"
+                style="animation-delay:0.075s"
+            >                                           ....::::...:::...:-....                                            </text>
+            
+
+            <text
+                x="40"
+                y="128"
+                class="ascii-line"
+                style="animation-delay:0.100s"
+            >                                        ........:---::-==:..:-::--:...                                        </text>
+            
+
+            <text
+                x="40"
+                y="140"
+                class="ascii-line"
+                style="animation-delay:0.125s"
+            >                                         ...::.......::::=+-.:::---::=-.                                      </text>
+            
+
+            <text
+                x="40"
+                y="152"
+                class="ascii-line"
+                style="animation-delay:0.150s"
+            >                                           .::  ... ..-=--=+-=-:=====++=::.                                   </text>
+            
+
+            <text
+                x="40"
+                y="164"
+                class="ascii-line"
+                style="animation-delay:0.175s"
+            >                                          .  ....  .:--==--==--::-++====++=.                                  </text>
+            
+
+            <text
+                x="40"
+                y="176"
+                class="ascii-line"
+                style="animation-delay:0.200s"
+            >                                             ..  . .:--:..::::--::::--:-++=-                                  </text>
+            
+
+            <text
+                x="40"
+                y="188"
+                class="ascii-line"
+                style="animation-delay:0.225s"
+            >                                              ......::::::..:::-:: .:..:=++-.                                 </text>
+            
+
+            <text
+                x="40"
+                y="200"
+                class="ascii-line"
+                style="animation-delay:0.250s"
+            >                                               ...:::.. .:: .....  .....:-=-.                                 </text>
+            
+
+            <text
+                x="40"
+                y="212"
+                class="ascii-line"
+                style="animation-delay:0.275s"
+            >                                                 .....    ......:... ..::--:                                  </text>
+            
+
+            <text
+                x="40"
+                y="224"
+                class="ascii-line"
+                style="animation-delay:0.300s"
+            >                                                   .:::------==++***+=-::-:                                   </text>
+            
+
+            <text
+                x="40"
+                y="236"
+                class="ascii-line"
+                style="animation-delay:0.325s"
+            >                                                ..:-=+*cc****cs##%####sc=:                                    </text>
+            
+
+            <text
+                x="40"
+                y="248"
+                class="ascii-line"
+                style="animation-delay:0.350s"
+            >                                           ..::--=+**csss##ss##%%%%%%##sc=                                    </text>
+            
+
+            <text
+                x="40"
+                y="260"
+                class="ascii-line"
+                style="animation-delay:0.375s"
+            >                                         ..:--=+++**ccss########%%%%%%#scc-                                   </text>
+            
+
+            <text
+                x="40"
+                y="272"
+                class="ascii-line"
+                style="animation-delay:0.400s"
+            >                                         ..:---+****ccssss#######%%####sc*+                                   </text>
+            
+
+            <text
+                x="40"
+                y="284"
+                class="ascii-line"
+                style="animation-delay:0.425s"
+            >                                          .:::-=+*ccccccssssss#########sc*+.                                  </text>
+            
+
+            <text
+                x="40"
+                y="296"
+                class="ascii-line"
+                style="animation-delay:0.450s"
+            >                                          .:::--=+*cccccss#######%%%%%%#sc*-                                  </text>
+            
+
+            <text
+                x="40"
+                y="308"
+                class="ascii-line"
+                style="animation-delay:0.475s"
+            >                                         .::::-=+**ccsss##%%%@@%%%%@@@@@%#s=                                  </text>
+            
+
+            <text
+                x="40"
+                y="320"
+                class="ascii-line"
+                style="animation-delay:0.500s"
+            >                                       ...:::::-=++***cssss##%%@@%%%%%%#c*==                                  </text>
+            
+
+            <text
+                x="40"
+                y="332"
+                class="ascii-line"
+                style="animation-delay:0.525s"
+            >                                       ....:::.  .....::::-=++*cssss*=-::..:.                                 </text>
+            
+
+            <text
+                x="40"
+                y="344"
+                class="ascii-line"
+                style="animation-delay:0.550s"
+            >                                       .:::..  ..:-===-:     .:+*cc+:..-=+++:                                 </text>
+            
+
+            <text
+                x="40"
+                y="356"
+                class="ascii-line"
+                style="animation-delay:0.575s"
+            >                            ...:.      :::........:=+:=--:....:+s%s+-=+=-:::                                  </text>
+            
+
+            <text
+                x="40"
+                y="368"
+                class="ascii-line"
+                style="animation-delay:0.600s"
+            >                           .  ..:.    .:-::---:. .-+c+-+c==-::-+#@%c**cc=++-                                  </text>
+            
+
+            <text
+                x="40"
+                y="380"
+                class="ascii-line"
+                style="animation-delay:0.625s"
+            >                           -.:-. . .  :::--=+++=---=+*csssc+==-=c%@%#sc*ccs+                                  </text>
+            
+
+            <text
+                x="40"
+                y="392"
+                class="ascii-line"
+                style="animation-delay:0.650s"
+            >                           :.--. .......::-=+*cccssss####sc*+===*%@%%%%%##%c                                  </text>
+            
+
+            <text
+                x="40"
+                y="404"
+                class="ascii-line"
+                style="animation-delay:0.675s"
+            >                            :+-. ........::-=*cs###%%%%%#sc+=--=*%@%#%@@%%%s.                                 </text>
+            
+
+            <text
+                x="40"
+                y="416"
+                class="ascii-line"
+                style="animation-delay:0.700s"
+            >                            .--:.  ........:-=+css#%%%%%#s*=::-+c#@@%%%@%%#c                                  </text>
+            
+
+            <text
+                x="40"
+                y="428"
+                class="ascii-line"
+                style="animation-delay:0.725s"
+            >                             :-:-:. .....  .:-=+*cs##%%##c+:-+=+c#@@@%%%%#s=                                  </text>
+            
+
+            <text
+                x="40"
+                y="440"
+                class="ascii-line"
+                style="animation-delay:0.750s"
+            >                              :==-:. ....   .::-=*ccs###sc- .-:.:*s#ss###s*                                   </text>
+            
+
+            <text
+                x="40"
+                y="452"
+                class="ascii-line"
+                style="animation-delay:0.775s"
+            >                                .... ..........:-=+*ccs#sc*-:   .-+*s%%#sc:                                   </text>
+            
+
+            <text
+                x="40"
+                y="464"
+                class="ascii-line"
+                style="animation-delay:0.800s"
+            >                                    ...........::-=+**cccc*+=:-=*cc*ccsss=                                    </text>
+            
+
+            <text
+                x="40"
+                y="476"
+                class="ascii-line"
+                style="animation-delay:0.825s"
+            >                                    .........::::--====-:------=****==-=*.                                    </text>
+            
+
+            <text
+                x="40"
+                y="488"
+                class="ascii-line"
+                style="animation-delay:0.850s"
+            >                                     .... ...::::::-----:..::-=++***+==+=                                     </text>
+            
+
+            <text
+                x="40"
+                y="500"
+                class="ascii-line"
+                style="animation-delay:0.875s"
+            >                                     ..    ...::...:--=++=--:=c####sccc*                                      </text>
+            
+
+            <text
+                x="40"
+                y="512"
+                class="ascii-line"
+                style="animation-delay:0.900s"
+            >                                     ..      ......::-=====---::--+*csc:                                      </text>
+            
+
+            <text
+                x="40"
+                y="524"
+                class="ascii-line"
+                style="animation-delay:0.925s"
+            >                                    ...       -++=====+++++***css###ss=                                       </text>
+            
+
+            <text
+                x="40"
+                y="536"
+                class="ascii-line"
+                style="animation-delay:0.950s"
+            >                                    ...       -+==+*csssscccss#%%@%%#c*-                                      </text>
+            
+
+            <text
+                x="40"
+                y="548"
+                class="ascii-line"
+                style="animation-delay:0.975s"
+            >                                    ...            .:--=++c###c**ccc+=#%.                                     </text>
+            
+
+            <text
+                x="40"
+                y="560"
+                class="ascii-line"
+                style="animation-delay:1.000s"
+            >                                     ..                 .:=*c#%#c=:. :c@c.                                    </text>
+            
+
+            <text
+                x="40"
+                y="572"
+                class="ascii-line"
+                style="animation-delay:1.025s"
+            >                                                   .=***=-:.:=*s%%s+-.=s%s=.                                  </text>
+            
+
+            <text
+                x="40"
+                y="584"
+                class="ascii-line"
+                style="animation-delay:1.050s"
+            >                                                 ..:=+*cccc*=::-=*s#%c++s%#+.:..                              </text>
+            
+
+            <text
+                x="40"
+                y="596"
+                class="ascii-line"
+                style="animation-delay:1.075s"
+            >                                                ......::-=+csc**+*css#@s*s#s=:--:::..                         </text>
+            
+
+            <text
+                x="40"
+                y="608"
+                class="ascii-line"
+                style="animation-delay:1.100s"
+            >                                             ...:+c*+=-:..:-===+s@@%###%sc##s=::-:::::::.                     </text>
+            
+
+            <text
+                x="40"
+                y="620"
+                class="ascii-line"
+                style="animation-delay:1.125s"
+            >                                            ..:.:++++*csc+-::-::+#%%@%#####%%s-:---::------:..                </text>
+            
+
+            <text
+                x="40"
+                y="632"
+                class="ascii-line"
+                style="animation-delay:1.150s"
+            >            ....      ..                     .:....::-=+*ccssc+:-*s#%%#######%s=----::--------:::..           </text>
+            
+
+            <text
+                x="40"
+                y="644"
+                class="ascii-line"
+                style="animation-delay:1.175s"
+            >        ..........                           .:=**==-:.:---+#@@#**cs%%########%*:::----------------:::..      </text>
+            
+
+            <text
+                x="40"
+                y="656"
+                class="ascii-line"
+                style="animation-delay:1.200s"
+            >    ..................    ..      .           :=+**csc+=====+ss###ss#%%#####s##+:------:::---------::----:..  </text>
+            
+
+            <text
+                x="40"
+                y="668"
+                class="ascii-line"
+                style="animation-delay:1.225s"
+            > .............................    .             ..:-+***c##scsscsssss#%###sscss=-------:::---==-----------::--</text>
+            
+
+            <text
+                x="40"
+                y="680"
+                class="ascii-line"
+                style="animation-delay:1.250s"
+            >..............................    .               :::-:-+cs#sssscss#ss####sccsc---:---:::--====---------=-.-=-</text>
+            
+
+            <text
+                x="40"
+                y="692"
+                class="ascii-line"
+                style="animation-delay:1.275s"
+            >................  ...........                     -+:...-+c###ssscss######sccs*:::::-:.:-=====---------==::==-</text>
+            
+
+            <text
+                x="40"
+                y="704"
+                class="ascii-line"
+                style="animation-delay:1.300s"
+            >......::::.......  ..........                      :-. ..:-+c##ssscss######cc#*::..--::--====--::------==.-=--</text>
+            
+
+            <text
+                x="40"
+                y="716"
+                class="ascii-line"
+                style="animation-delay:1.325s"
+            >......:::::.......  ..........                      ..  .::-=+csscsscc#####scs+-:::-::--==-=----:::---==::==--</text>
+            
+
+            <text
+                x="40"
+                y="728"
+                class="ascii-line"
+                style="animation-delay:1.350s"
+            >.....:............  ........                             .:--=+*ccccsccssssss#s-::--:-----==-::::::--==-.-=--:</text>
+            
+
+    </g>
+
+</svg>

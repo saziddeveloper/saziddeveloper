@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="900"
+    height="900"
+    viewBox="0 0 900 900"
+>
+
+<defs>
+
+    <linearGradient
+        id="goldLine"
+        x1="0%"
+        y1="0%"
+        x2="100%"
+        y2="0%"
+    >
+
+        <stop
+            offset="0%"
+            stop-color="#6F5B1D"
+        />
+
+        <stop
+            offset="50%"
+            stop-color="#D4AF37"
+        />
+
+        <stop
+            offset="100%"
+            stop-color="#6F5B1D"
+        />
+
+    </linearGradient>
+
+
+    <style>
+
+        .info-row {
+            opacity: 0;
+
+            animation:
+                fadeIn
+                0.5s
+                ease-out
+                forwards;
+        }
+
+
+        .label {
+            fill: #D4AF37;
+
+            font-family:
+                "DejaVu Sans Mono",
+                "Liberation Mono",
+                monospace;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        .value {
+            fill: #C7C7C7;
+
+            font-family:
+                "DejaVu Sans Mono",
+                "Liberation Mono",
+                monospace;
+
+            font-size: 15px;
+
+            font-weight: 400;
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+    </style>
+
+</defs>
+
+
+<!-- Main terminal -->
+
+<rect
+    x="1"
+    y="1"
+    width="898"
+    height="898"
+    rx="28"
+    fill="#090909"
+    stroke="#292929"
+    stroke-width="2"
+/>
+
+
+<!-- Inner panel -->
+
+<rect
+    x="14"
+    y="14"
+    width="872"
+    height="872"
+    rx="20"
+    fill="#0d0d0d"
+/>
+
+
+<!-- Terminal buttons -->
+
+<circle
+    cx="34"
+    cy="34"
+    r="7"
+    fill="#ff5f57"
+/>
+
+<circle
+    cx="58"
+    cy="34"
+    r="7"
+    fill="#febc2e"
+/>
+
+<circle
+    cx="82"
+    cy="34"
+    r="7"
+    fill="#28c840"
+/>
+
+
+<!-- Terminal title -->
+
+<text
+    x="112"
+    y="40"
+    fill="#C7C7C7"
+    font-family="monospace"
+    font-size="17"
+    letter-spacing="1"
+>
+    SAZIDDEVELOER
+</text>
+
+
+<text
+    x="755"
+    y="40"
+    fill="#8F7727"
+    font-family="monospace"
+    font-size="11"
+>
+    SYSTEM.INFO
+</text>
+
+
+<!-- Separator -->
+
+<line
+    x1="30"
+    y1="65"
+    x2="870"
+    y2="65"
+    stroke="#292929"
+/>
+
+
+<!-- Command -->
+
+<text
+    x="55"
+    y="105"
+    fill="#D4AF37"
+    font-family="monospace"
+    font-size="15"
+>
+    $ fedora
+</text>
+
+
+<text
+    x="55"
+    y="130"
+    fill="#777777"
+    font-family="monospace"
+    font-size="12"
+>
+    saziddeveloper.profile
+</text>
+
+
+<!-- Information -->
+
+
+    <g
+        class="info-row"
+        style="animation-delay:0.15s"
+    >
+
+        <text
+            x="55"
+            y="150"
+            class="label"
+        >
+            NAME
+        </text>
+
+        <text
+            x="220"
+            y="150"
+            class="value"
+        >
+            Ashaduzzaman Sazid
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.25s"
+    >
+
+        <text
+            x="55"
+            y="200"
+            class="label"
+        >
+            ROLE
+        </text>
+
+        <text
+            x="220"
+            y="200"
+            class="value"
+        >
+            MERN Stack Developer
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.35s"
+    >
+
+        <text
+            x="55"
+            y="250"
+            class="label"
+        >
+            LOCATION
+        </text>
+
+        <text
+            x="220"
+            y="250"
+            class="value"
+        >
+            Bangladesh
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.45s"
+    >
+
+        <text
+            x="55"
+            y="320"
+            class="label"
+        >
+            FRONTEND
+        </text>
+
+        <text
+            x="220"
+            y="320"
+            class="value"
+        >
+            React • JavaScript • TypeScript • HTML • CSS • Tailwind
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.55s"
+    >
+
+        <text
+            x="55"
+            y="395"
+            class="label"
+        >
+            BACKEND
+        </text>
+
+        <text
+            x="220"
+            y="395"
+            class="value"
+        >
+            Node.js • Express.js • MongoDB
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.65s"
+    >
+
+        <text
+            x="55"
+            y="470"
+            class="label"
+        >
+            TOOLS
+        </text>
+
+        <text
+            x="220"
+            y="470"
+            class="value"
+        >
+            Git • GitHub • VS Code • Postman • npm • Vite
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.75s"
+    >
+
+        <text
+            x="55"
+            y="545"
+            class="label"
+        >
+            DESIGN
+        </text>
+
+        <text
+            x="220"
+            y="545"
+            class="value"
+        >
+            Figma • Canva
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.85s"
+    >
+
+        <text
+            x="55"
+            y="620"
+            class="label"
+        >
+            DEPLOY
+        </text>
+
+        <text
+            x="220"
+            y="620"
+            class="value"
+        >
+            Vercel • Netlify • GitHub Actions
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.95s"
+    >
+
+        <text
+            x="55"
+            y="700"
+            class="label"
+        >
+            GITHUB
+        </text>
+
+        <text
+            x="220"
+            y="700"
+            class="value"
+        >
+            github.com/saziddeveloper
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:1.05s"
+    >
+
+        <text
+            x="55"
+            y="750"
+            class="label"
+        >
+            WEB
+        </text>
+
+        <text
+            x="220"
+            y="750"
+            class="value"
+        >
+            saziddeveloper.github.io
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:1.15s"
+    >
+
+        <text
+            x="55"
+            y="800"
+            class="label"
+        >
+            EMAIL
+        </text>
+
+        <text
+            x="220"
+            y="800"
+            class="value"
+        >
+            saziddeveloper@gmail.com
+        </text>
+
+    </g>
+    
+
+
+<!-- Bottom status -->
+
+<line
+    x1="30"
+    y1="850"
+    x2="870"
+    y2="850"
+    stroke="#292929"
+/>
+
+
+<text
+    x="55"
+    y="878"
+    fill="#777777"
+    font-family="monospace"
+    font-size="11"
+>
+    STATUS
+</text>
+
+
+<text
+    x="110"
+    y="878"
+    fill="#D4AF37"
+    font-family="monospace"
+    font-size="11"
+>
+    ONLINE
+</text>
+
+
+<text
+    x="720"
+    y="878"
+    fill="#777777"
+    font-family="monospace"
+    font-size="11"
+>
+    v1.0.0
+</text>
+
+
+</svg>
