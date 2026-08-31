@@ -7,10 +7,10 @@
 Building scalable web applications and intelligent software with TypeScript, React, Next.js, Node.js, PostgreSQL, AI Agents, RAG, Cloud & DevOps.
 
 <a href="https://saziddeveloper.github.io/">
-  <img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=google-chrome&logoColor=black" />
+  <img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=google-chrome&logoColor=black" style="height:36px"/>
 </a>
 <a href="https://github.com/saziddeveloper">
-  <img src="https://img.shields.io/badge/GitHub-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" />
+  <img src="https://img.shields.io/badge/GitHub-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" style="height:36px"/>
 </a>
 
 </div>
@@ -169,9 +169,9 @@ Explore All Repositories →
 
 <div align="center">
 
-<p> <a href="https://github.com/saziddeveloper"> <img src="https://img.shields.io/badge/GitHub-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" style="height:42px"/> </a> &nbsp;&nbsp;&nbsp; <a href="https://www.linkedin.com/in/saziddeveloper/"> <img src="https://img.shields.io/badge/LinkedIn-0D0D0D?style=for-the-badge&logo=linkedin&logoColor=D4AF37" /> </a> &nbsp;&nbsp;&nbsp; <a href="https://www.facebook.com/saziddeveloper/"> <img src="https://img.shields.io/badge/Facebook-0D0D0D?style=for-the-badge&logo=facebook&logoColor=D4AF37" /> </a> </p>
+<p> <a href="https://github.com/saziddeveloper"> <img src="https://img.shields.io/badge/GitHub-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" style="height:40px"/> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.linkedin.com/in/saziddeveloper/"> <img src="https://img.shields.io/badge/LinkedIn-0D0D0D?style=for-the-badge&logo=linkedin&logoColor=D4AF37" style="height:40px"/> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.facebook.com/saziddeveloper/"> <img src="https://img.shields.io/badge/Facebook-0D0D0D?style=for-the-badge&logo=facebook&logoColor=D4AF37" style="height:40px"/> </a> </p>
 
-<p> <a href="mailto:saziddeveloper@gmail.com"> <img src="https://img.shields.io/badge/Email-0D0D0D?style=for-the-badge&logo=gmail&logoColor=D4AF37" /> </a> &nbsp;&nbsp;&nbsp; <a href="https://saziddeveloper.github.io/"> <img src="https://img.shields.io/badge/Portfolio-0D0D0D?style=for-the-badge&logo=google-chrome&logoColor=D4AF37" /> </a> </p>
+<p> <a href="mailto:saziddeveloper@gmail.com"> <img src="https://img.shields.io/badge/Email-0D0D0D?style=for-the-badge&logo=gmail&logoColor=D4AF37" style="height:40px"/> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://saziddeveloper.github.io/"> <img src="https://img.shields.io/badge/Portfolio-0D0D0D?style=for-the-badge&logo=google-chrome&logoColor=D4AF37" style="height:40px"/> </a> </p>
 
 <br>
 
