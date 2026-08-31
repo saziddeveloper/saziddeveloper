@@ -7,13 +7,9 @@ import html
 INPUT = Path("data/contributions.json")
 OUTPUT = Path("contrib-heatmap.svg")
 
-
-# ------------------------------------------------------------
-# CANVAS
-# ------------------------------------------------------------
-
-WIDTH = 1000
-HEIGHT = 330
+# ============================================================
+# THEME
+# ============================================================
 
 BG = "#090909"
 PANEL = "#0D0D0D"
@@ -28,9 +24,9 @@ GOLD_3 = "#8F7727"
 GOLD_4 = "#D4AF37"
 
 
-# ------------------------------------------------------------
+# ============================================================
 # LOAD DATA
-# ------------------------------------------------------------
+# ============================================================
 
 def load_data():
 
@@ -47,9 +43,9 @@ def load_data():
         return json.load(file)
 
 
-# ------------------------------------------------------------
-# COLOR
-# ------------------------------------------------------------
+# ============================================================
+# COLORS
+# ============================================================
 
 def contribution_color(level):
 
@@ -67,266 +63,66 @@ def contribution_color(level):
     return GOLD_4
 
 
-# ------------------------------------------------------------
-# CALENDAR RANGE
-# ------------------------------------------------------------
+# ============================================================
+# CALENDAR
+# ============================================================
 
-def calendar_range(contributions):
-
-    if not contributions:
-        today = date.today()
-
-        while today.weekday() != 6:
-            today -= timedelta(days=1)
-
-        first_day = today - timedelta(days=52 * 7)
-
-        return first_day, today
-
-    dates = [
-        date.fromisoformat(
-            item["date"]
-        )
-        for item in contributions
-    ]
-
-    latest = max(dates)
-
-    # End on Saturday so the calendar is complete.
-    end = latest
-
-    while end.weekday() != 5:
-        end += timedelta(days=1)
-
-    # 53 weeks × 7 days.
-    first = end - timedelta(days=(53 * 7) - 1)
-
-    return first, end
-
-
-# ------------------------------------------------------------
-# HEATMAP CELLS
-# ------------------------------------------------------------
-
-def create_cells(contributions):
-
-    cell_size = 12
-    gap = 4
-
-    # Space for weekday labels.
-    left = 58
-    top = 105
-
-    columns = 53
+def build_calendar(contributions):
 
     by_date = {
         item["date"]: item
         for item in contributions
     }
 
-    first_day, last_day = calendar_range(
-        contributions
+    dates = [
+        date.fromisoformat(item["date"])
+        for item in contributions
+    ]
+
+    if not dates:
+        raise RuntimeError(
+            "No contribution data available."
+        )
+
+    latest = max(dates)
+
+    # GitHub calendar ends on Saturday.
+    while latest.weekday() != 5:
+        latest += timedelta(days=1)
+
+    # 53 complete weeks.
+    first = latest - timedelta(
+        days=(53 * 7) - 1
     )
 
     cells = []
 
-    total_cells = columns * 7
+    current = first
 
-    for index in range(total_cells):
-
-        current = first_day + timedelta(
-            days=index
-        )
+    while current <= latest:
 
         item = by_date.get(
-            current.isoformat()
+            current.isoformat(),
+            {
+                "level": 0
+            }
         )
 
-        level = (
-            item.get("level", 0)
-            if item
-            else 0
-        )
-
-        week = index // 7
-        weekday = index % 7
-
-        x = (
-            left
-            + week * (cell_size + gap)
-        )
-
-        y = (
-            top
-            + weekday * (cell_size + gap)
-        )
-
-        fill = contribution_color(
-            level
-        )
-
-        if item:
-            tooltip = (
-                f"{current.isoformat()} — "
-                f"GitHub activity level {level}/4"
+        cells.append({
+            "date": current,
+            "level": int(
+                item.get("level", 0)
             )
-        else:
-            tooltip = (
-                f"{current.isoformat()} — "
-                f"No activity data"
-            )
+        })
 
-        delay = index * 0.003
+        current += timedelta(days=1)
 
-        cells.append(
-            f"""
-            <g>
-                <title>
-                    {html.escape(tooltip)}
-                </title>
-
-                <rect
-                    x="{x}"
-                    y="{y}"
-                    width="{cell_size}"
-                    height="{cell_size}"
-                    rx="3"
-                    fill="{fill}"
-                    class="cell"
-                >
-                    <animate
-                        attributeName="opacity"
-                        from="0"
-                        to="1"
-                        dur="0.35s"
-                        begin="{delay:.3f}s"
-                        fill="freeze"
-                    />
-                </rect>
-            </g>
-            """
-        )
-
-    return "\n".join(cells)
+    return cells, first, latest
 
 
-# ------------------------------------------------------------
-# MONTH LABELS
-# ------------------------------------------------------------
-
-def month_labels(contributions):
-
-    cell_size = 12
-    gap = 4
-
-    left = 58
-    top = 88
-
-    first_day, last_day = calendar_range(
-        contributions
-    )
-
-    labels = []
-
-    current = date(
-        first_day.year,
-        first_day.month,
-        1
-    )
-
-    while current <= last_day:
-
-        days_from_start = (
-            current - first_day
-        ).days
-
-        week = days_from_start // 7
-
-        x = (
-            left
-            + week * (cell_size + gap)
-        )
-
-        labels.append(
-            f"""
-            <text
-                x="{x}"
-                y="{top}"
-                class="month"
-            >
-                {current.strftime("%b")}
-            </text>
-            """
-        )
-
-        if current.month == 12:
-
-            current = date(
-                current.year + 1,
-                1,
-                1
-            )
-
-        else:
-
-            current = date(
-                current.year,
-                current.month + 1,
-                1
-            )
-
-    return "\n".join(labels)
-
-
-# ------------------------------------------------------------
-# WEEKDAY LABELS
-# ------------------------------------------------------------
-
-def weekday_labels():
-
-    left = 16
-    top = 114
-
-    names = [
-        "Sun",
-        "",
-        "Tue",
-        "",
-        "Thu",
-        "",
-        "Sat",
-    ]
-
-    labels = []
-
-    for index, name in enumerate(names):
-
-        if not name:
-            continue
-
-        y = (
-            top
-            + index * 16
-        )
-
-        labels.append(
-            f"""
-            <text
-                x="{left}"
-                y="{y}"
-                class="weekday"
-            >
-                {name}
-            </text>
-            """
-        )
-
-    return "\n".join(labels)
-
-
-# ------------------------------------------------------------
-# MAIN SVG
-# ------------------------------------------------------------
+# ============================================================
+# SVG GENERATOR
+# ============================================================
 
 def create_svg(data):
 
@@ -344,6 +140,50 @@ def create_svg(data):
         "username",
         "saziddeveloper"
     )
+
+    cells, first_day, last_day = build_calendar(
+        contributions
+    )
+
+    # --------------------------------------------------------
+    # GRID
+    # --------------------------------------------------------
+
+    CELL = 11
+    GAP = 3
+    STEP = CELL + GAP
+
+    WEEKDAY_WIDTH = 38
+
+    COLUMNS = 53
+    ROWS = 7
+
+    GRID_WIDTH = (
+        COLUMNS * CELL
+        + (COLUMNS - 1) * GAP
+    )
+
+    GRID_HEIGHT = (
+        ROWS * CELL
+        + (ROWS - 1) * GAP
+    )
+
+    GRID_X = 64
+    GRID_Y = 105
+
+    RIGHT_MARGIN = 28
+
+    WIDTH = (
+        GRID_X
+        + GRID_WIDTH
+        + RIGHT_MARGIN
+    )
+
+    HEIGHT = 325
+
+    # --------------------------------------------------------
+    # METRICS
+    # --------------------------------------------------------
 
     total = metrics.get(
         "total",
@@ -365,15 +205,194 @@ def create_svg(data):
         0
     )
 
-    cells = create_cells(
-        contributions
+    # --------------------------------------------------------
+    # CELLS
+    # --------------------------------------------------------
+
+    rendered_cells = []
+
+    for index, cell in enumerate(cells):
+
+        current = cell["date"]
+
+        day_index = (
+            current - first_day
+        ).days
+
+        week = day_index // 7
+        weekday = day_index % 7
+
+        x = (
+            GRID_X
+            + week * STEP
+        )
+
+        y = (
+            GRID_Y
+            + weekday * STEP
+        )
+
+        level = cell["level"]
+
+        fill = contribution_color(
+            level
+        )
+
+        tooltip = (
+            f"{current.isoformat()} — "
+            f"activity level {level}/4"
+        )
+
+        delay = index * 0.002
+
+        rendered_cells.append(
+            f"""
+            <g>
+                <title>{html.escape(tooltip)}</title>
+
+                <rect
+                    x="{x}"
+                    y="{y}"
+                    width="{CELL}"
+                    height="{CELL}"
+                    rx="2.5"
+                    fill="{fill}"
+                    class="cell"
+                >
+                    <animate
+                        attributeName="opacity"
+                        from="0"
+                        to="1"
+                        dur="0.3s"
+                        begin="{delay:.3f}s"
+                        fill="freeze"
+                    />
+                </rect>
+            </g>
+            """
+        )
+
+    # --------------------------------------------------------
+    # MONTH LABELS
+    # --------------------------------------------------------
+
+    month_labels = []
+
+    cursor = date(
+        first_day.year,
+        first_day.month,
+        1
     )
 
-    months = month_labels(
-        contributions
+    # Keep month labels safely inside SVG.
+    MIN_MONTH_X = GRID_X
+    MAX_MONTH_X = (
+        GRID_X
+        + GRID_WIDTH
+        - 25
     )
 
-    weekdays = weekday_labels()
+    while cursor <= last_day:
+
+        days_from_start = (
+            cursor - first_day
+        ).days
+
+        week = days_from_start // 7
+
+        x = (
+            GRID_X
+            + week * STEP
+        )
+
+        # Prevent labels from leaving the SVG.
+        x = max(
+            MIN_MONTH_X,
+            min(x, MAX_MONTH_X)
+        )
+
+        month_labels.append(
+            f"""
+            <text
+                x="{x}"
+                y="91"
+                class="month"
+            >
+                {cursor.strftime("%b")}
+            </text>
+            """
+        )
+
+        if cursor.month == 12:
+
+            cursor = date(
+                cursor.year + 1,
+                1,
+                1
+            )
+
+        else:
+
+            cursor = date(
+                cursor.year,
+                cursor.month + 1,
+                1
+            )
+
+    # --------------------------------------------------------
+    # WEEKDAY LABELS
+    # --------------------------------------------------------
+
+    weekday_names = [
+        "Sun",
+        "",
+        "Tue",
+        "",
+        "Thu",
+        "",
+        "Sat"
+    ]
+
+    weekday_labels = []
+
+    for index, name in enumerate(
+        weekday_names
+    ):
+
+        if not name:
+            continue
+
+        y = (
+            GRID_Y
+            + index * STEP
+            + 9
+        )
+
+        weekday_labels.append(
+            f"""
+            <text
+                x="18"
+                y="{y}"
+                class="weekday"
+            >
+                {name}
+            </text>
+            """
+        )
+
+    # --------------------------------------------------------
+    # FOOTER
+    # --------------------------------------------------------
+
+    footer_y = 300
+
+    legend_x = (
+        WIDTH - 235
+    )
+
+    # --------------------------------------------------------
+    # SVG
+    # --------------------------------------------------------
 
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 
@@ -386,140 +405,103 @@ def create_svg(data):
 
 <defs>
 
-    <filter
-        id="goldGlow"
-        x="-50%"
-        y="-50%"
-        width="200%"
-        height="200%"
-    >
-        <feGaussianBlur
-            stdDeviation="3"
-            result="blur"
-        />
+<style>
 
-        <feMerge>
-            <feMergeNode
-                in="blur"
-            />
+.title {{
+    fill: {TEXT};
+    font-family: monospace;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}}
 
-            <feMergeNode
-                in="SourceGraphic"
-            />
-        </feMerge>
-    </filter>
+.subtitle {{
+    fill: {MUTED};
+    font-family: monospace;
+    font-size: 10px;
+}}
 
-    <style>
+.month {{
+    fill: {MUTED};
+    font-family: monospace;
+    font-size: 9px;
+}}
 
-        .title {{
-            fill: {TEXT};
-            font-family: monospace;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }}
+.weekday {{
+    fill: {MUTED};
+    font-family: monospace;
+    font-size: 8px;
+}}
 
-        .subtitle {{
-            fill: {MUTED};
-            font-family: monospace;
-            font-size: 11px;
-        }}
+.metric-label {{
+    fill: {MUTED};
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+}}
 
-        .month {{
-            fill: {MUTED};
-            font-family: monospace;
-            font-size: 10px;
-        }}
+.metric-value {{
+    fill: {GOLD_4};
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: bold;
+}}
 
-        .weekday {{
-            fill: {MUTED};
-            font-family: monospace;
-            font-size: 9px;
-        }}
+.cell {{
+    opacity: 0;
+}}
 
-        .metric-label {{
-            fill: {MUTED};
-            font-family: monospace;
-            font-size: 9px;
-            letter-spacing: 1px;
-        }}
-
-        .metric-value {{
-            fill: {GOLD_4};
-            font-family: monospace;
-            font-size: 18px;
-            font-weight: bold;
-        }}
-
-        .cell {{
-            opacity: 0;
-        }}
-
-    </style>
+</style>
 
 </defs>
 
 
-<!-- Background -->
+<!-- BACKGROUND -->
 
 <rect
     x="1"
     y="1"
     width="{WIDTH - 2}"
     height="{HEIGHT - 2}"
-    rx="22"
+    rx="20"
     fill="{BG}"
     stroke="{BORDER}"
     stroke-width="2"
 />
 
 
-<!-- Subtle inner panel -->
-
-<rect
-    x="12"
-    y="12"
-    width="{WIDTH - 24}"
-    height="{HEIGHT - 24}"
-    rx="17"
-    fill="{PANEL}"
-    opacity="0.45"
-/>
-
-
-<!-- Header -->
+<!-- HEADER -->
 
 <text
-    x="32"
-    y="38"
+    x="28"
+    y="35"
     class="title"
 >
     CONTRIBUTION MATRIX
 </text>
 
-
 <text
-    x="32"
-    y="59"
+    x="28"
+    y="55"
     class="subtitle"
 >
     @{html.escape(username)} • GitHub activity
 </text>
 
 
-<!-- Metrics -->
+<!-- METRICS -->
 
 <text
-    x="690"
-    y="28"
+    x="{WIDTH - 300}"
+    y="25"
     class="metric-label"
 >
     TOTAL
 </text>
 
 <text
-    x="690"
-    y="50"
+    x="{WIDTH - 300}"
+    y="46"
     class="metric-value"
 >
     {total}
@@ -527,16 +509,16 @@ def create_svg(data):
 
 
 <text
-    x="785"
-    y="28"
+    x="{WIDTH - 205}"
+    y="25"
     class="metric-label"
 >
     STREAK
 </text>
 
 <text
-    x="785"
-    y="50"
+    x="{WIDTH - 205}"
+    y="46"
     class="metric-value"
 >
     {current_streak}
@@ -544,120 +526,105 @@ def create_svg(data):
 
 
 <text
-    x="885"
-    y="28"
+    x="{WIDTH - 100}"
+    y="25"
     class="metric-label"
 >
     BEST
 </text>
 
 <text
-    x="885"
-    y="50"
+    x="{WIDTH - 100}"
+    y="46"
     class="metric-value"
 >
     {best_day}
 </text>
 
 
-<!-- Month labels -->
+<!-- MONTHS -->
 
-{months}
-
-
-<!-- Weekday labels -->
-
-{weekdays}
+{''.join(month_labels)}
 
 
-<!-- Heatmap -->
+<!-- WEEKDAYS -->
 
-{cells}
+{''.join(weekday_labels)}
 
 
-<!-- Legend -->
+<!-- CONTRIBUTION CELLS -->
 
-<text
-    x="730"
-    y="270"
-    class="subtitle"
->
-    ACTIVITY
-</text>
+{''.join(rendered_cells)}
 
+
+<!-- LEGEND -->
 
 <text
-    x="790"
-    y="270"
+    x="{legend_x}"
+    y="279"
     class="subtitle"
 >
     LESS
 </text>
 
-
 <rect
-    x="825"
-    y="261"
-    width="12"
-    height="12"
-    rx="3"
+    x="{legend_x + 36}"
+    y="270"
+    width="11"
+    height="11"
+    rx="2"
     fill="{GOLD_1}"
 />
 
-
 <rect
-    x="844"
-    y="261"
-    width="12"
-    height="12"
-    rx="3"
+    x="{legend_x + 53}"
+    y="270"
+    width="11"
+    height="11"
+    rx="2"
     fill="{GOLD_2}"
 />
 
-
 <rect
-    x="863"
-    y="261"
-    width="12"
-    height="12"
-    rx="3"
+    x="{legend_x + 70}"
+    y="270"
+    width="11"
+    height="11"
+    rx="2"
     fill="{GOLD_3}"
 />
 
-
 <rect
-    x="882"
-    y="261"
-    width="12"
-    height="12"
-    rx="3"
+    x="{legend_x + 87}"
+    y="270"
+    width="11"
+    height="11"
+    rx="2"
     fill="{GOLD_4}"
 />
 
-
 <text
-    x="902"
-    y="270"
+    x="{legend_x + 104}"
+    y="279"
     class="subtitle"
 >
     MORE
 </text>
 
 
-<!-- Footer information -->
+<!-- FOOTER -->
 
 <text
-    x="32"
-    y="306"
+    x="28"
+    y="{footer_y}"
     class="subtitle"
 >
     Longest streak: {longest_streak} days
 </text>
 
-
 <text
-    x="32"
-    y="322"
+    x="28"
+    y="316"
     class="subtitle"
 >
     Updated automatically • github.com/{html.escape(username)}
@@ -668,9 +635,9 @@ def create_svg(data):
 """
 
 
-# ------------------------------------------------------------
-# WRITE FILE
-# ------------------------------------------------------------
+# ============================================================
+# MAIN
+# ============================================================
 
 def main():
 
@@ -690,7 +657,7 @@ def main():
     )
 
     print(
-        f"Size: {WIDTH} × {HEIGHT}"
+        f"Canvas: {WIDTH if 'WIDTH' in locals() else 'dynamic'}"
     )
 
 
