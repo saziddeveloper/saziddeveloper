@@ -15,12 +15,15 @@ URL = f"https://github.com/users/{USERNAME}/contributions"
 
 
 def fetch_page():
-    print(f"Fetching contribution calendar for @{USERNAME}...")
+
+    print(
+        f"Fetching GitHub contributions for @{USERNAME}..."
+    )
 
     response = requests.get(
         URL,
         headers={
-            "User-Agent": "Mozilla/5.0"
+            "User-Agent": "Mozilla/5.0",
         },
         timeout=30,
     )
@@ -31,58 +34,73 @@ def fetch_page():
 
 
 def parse_contributions(html):
+
     soup = BeautifulSoup(
         html,
-        "html.parser"
+        "html.parser",
     )
 
-    days = soup.select(
-        "td.ContributionCalendar-day"
+    elements = soup.select(
+        "td.ContributionCalendar-day[data-date][data-level]"
     )
 
-    if not days:
-        raise RuntimeError(
-            "Could not find GitHub contribution cells."
-        )
+    print(
+        f"Found {len(elements)} contribution days."
+    )
 
     contributions = []
 
-    for cell in days:
+    for element in elements:
 
-        date_value = cell.get("data-date")
+        date_value = element.get(
+            "data-date"
+        )
 
-        if not date_value:
+        level_value = element.get(
+            "data-level",
+            "0",
+        )
+
+        try:
+            day = date.fromisoformat(
+                date_value
+            )
+        except (TypeError, ValueError):
             continue
 
-        count = 0
+        try:
+            level = int(level_value)
+        except (TypeError, ValueError):
+            level = 0
 
-        # GitHub usually stores the contribution count
-        # inside an aria-label.
-        aria_label = cell.get(
-            "aria-label",
-            ""
-        )
-
-        match = re.search(
-            r"(\d+)\s+contribution",
-            aria_label
-        )
-
-        if match:
-            count = int(match.group(1))
-
-        # Determine contribution level.
-        level = cell.get(
-            "data-level",
-            "0"
-        )
+        # GitHub's public HTML currently exposes
+        # contribution intensity as data-level.
+        #
+        # 0 = no contribution
+        # 1 = low
+        # 2 = medium-low
+        # 3 = medium-high
+        # 4 = high
+        #
+        # We store the level directly and use it
+        # for the visual heatmap.
 
         contributions.append(
             {
-                "date": date_value,
-                "count": count,
-                "level": int(level),
+                "date": day.isoformat(),
+                "count": level,
+                "level": level,
             }
+        )
+
+    contributions.sort(
+        key=lambda item: item["date"]
+    )
+
+    if not contributions:
+
+        raise RuntimeError(
+            "No contribution days found."
         )
 
     return contributions
@@ -90,35 +108,18 @@ def parse_contributions(html):
 
 def calculate_metrics(contributions):
 
-    if not contributions:
-        return {
-            "total": 0,
-            "current_streak": 0,
-            "longest_streak": 0,
-            "best_day": 0,
-            "best_day_date": None,
-        }
-
     total = sum(
         item["count"]
         for item in contributions
     )
 
-    best = max(
+    best_day = max(
         contributions,
-        key=lambda item: item["count"]
-    )
-
-    # Sort chronologically.
-    contributions = sorted(
-        contributions,
-        key=lambda item: item["date"]
+        key=lambda item: item["count"],
     )
 
     longest_streak = 0
-    current_streak = 0
     running_streak = 0
-
     previous_date = None
 
     for item in contributions:
@@ -140,7 +141,7 @@ def calculate_metrics(contributions):
 
             longest_streak = max(
                 longest_streak,
-                running_streak
+                running_streak,
             )
 
         else:
@@ -148,7 +149,8 @@ def calculate_metrics(contributions):
 
         previous_date = current_date
 
-    # Calculate current streak from the end.
+    current_streak = 0
+
     for item in reversed(contributions):
 
         if item["count"] > 0:
@@ -160,16 +162,19 @@ def calculate_metrics(contributions):
         "total": total,
         "current_streak": current_streak,
         "longest_streak": longest_streak,
-        "best_day": best["count"],
-        "best_day_date": best["date"],
+        "best_day": best_day["count"],
+        "best_day_date": best_day["date"],
     }
 
 
-def save_data(contributions, metrics):
+def save_data(
+    contributions,
+    metrics,
+):
 
     OUTPUT.parent.mkdir(
         parents=True,
-        exist_ok=True
+        exist_ok=True,
     )
 
     payload = {
@@ -182,32 +187,26 @@ def save_data(contributions, metrics):
     OUTPUT.write_text(
         json.dumps(
             payload,
-            indent=2
+            indent=2,
         ),
-        encoding="utf-8"
+        encoding="utf-8",
     )
 
     print(
-        f"Saved contribution data to {OUTPUT}"
+        f"Saved data to {OUTPUT}"
     )
 
 
 def main():
 
-    print("=" * 50)
+    print("=" * 55)
     print("       GITHUB CONTRIBUTION FETCHER")
-    print("=" * 50)
+    print("=" * 55)
 
     html = fetch_page()
 
-    print("Parsing contribution calendar...")
-
     contributions = parse_contributions(
         html
-    )
-
-    print(
-        f"Found {len(contributions)} contribution days."
     )
 
     metrics = calculate_metrics(
@@ -216,32 +215,45 @@ def main():
 
     print()
     print(
-        f"Total contributions: "
-        f"{metrics['total']}"
+        f"Contribution days : {len(contributions)}"
     )
 
     print(
-        f"Current streak: "
+        f"Activity levels   : "
+        f"{sum(x['level'] > 0 for x in contributions)}"
+    )
+
+    print(
+        f"Activity score    : {metrics['total']}"
+    )
+
+    print(
+        f"Current streak    : "
         f"{metrics['current_streak']} days"
     )
 
     print(
-        f"Longest streak: "
+        f"Longest streak    : "
         f"{metrics['longest_streak']} days"
     )
 
     print(
-        f"Best day: "
-        f"{metrics['best_day']} contributions"
+        f"Best level        : "
+        f"{metrics['best_day']}"
+    )
+
+    print(
+        f"Best day          : "
+        f"{metrics['best_day_date']}"
     )
 
     save_data(
         contributions,
-        metrics
+        metrics,
     )
 
     print()
-    print("Done!")
+    print("SUCCESS")
 
 
 if __name__ == "__main__":
