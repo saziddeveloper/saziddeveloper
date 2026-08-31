@@ -169,25 +169,13 @@ Explore All Repositories →
 
 <div align="center">
 
-<a href="https://github.com/saziddeveloper">
-<img src="https://img.shields.io/badge/GitHub-saziddeveloper-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" />
-</a>
+<p> <a href="https://github.com/saziddeveloper"> <img src="https://img.shields.io/badge/GitHub-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" /> </a> &nbsp;&nbsp;&nbsp; <a href="https://www.linkedin.com/in/saziddeveloper/"> <img src="https://img.shields.io/badge/LinkedIn-0D0D0D?style=for-the-badge&logo=linkedin&logoColor=D4AF37" /> </a> &nbsp;&nbsp;&nbsp; <a href="https://www.facebook.com/saziddeveloper/"> <img src="https://img.shields.io/badge/Facebook-0D0D0D?style=for-the-badge&logo=facebook&logoColor=D4AF37" /> </a> </p>
 
-<a href="https://www.linkedin.com/in/saziddeveloper/">
-<img src="https://img.shields.io/badge/LinkedIn-Connect-0D0D0D?style=for-the-badge&logo=linkedin&logoColor=D4AF37" />
-</a>
+<p> <a href="mailto:saziddeveloper@gmail.com"> <img src="https://img.shields.io/badge/Email-0D0D0D?style=for-the-badge&logo=gmail&logoColor=D4AF37" /> </a> &nbsp;&nbsp;&nbsp; <a href="https://saziddeveloper.github.io/"> <img src="https://img.shields.io/badge/Portfolio-0D0D0D?style=for-the-badge&logo=google-chrome&logoColor=D4AF37" /> </a> </p>
 
-<a href="https://www.facebook.com/saziddeveloper/">
-<img src="https://img.shields.io/badge/Facebook-Connect-0D0D0D?style=for-the-badge&logo=facebook&logoColor=D4AF37" />
-</a>
+<br>
 
-<a href="mailto:saziddeveloper@gmail.com">
-<img src="https://img.shields.io/badge/Email-Contact-0D0D0D?style=for-the-badge&logo=gmail&logoColor=D4AF37" />
-</a>
-
-<a href="https://saziddeveloper.github.io/">
-<img src="https://img.shields.io/badge/Portfolio-Visit-0D0D0D?style=for-the-badge&logo=google-chrome&logoColor=D4AF37" />
-</a>
+<sub><code>OPEN TO BUILD • COLLABORATE • CREATE</code></sub>
 
 </div>
 
