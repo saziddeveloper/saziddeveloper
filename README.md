@@ -74,11 +74,6 @@ My current focus is improving my full-stack engineering skills and turning ideas
   <img src="https://skillicons.dev/icons?i=mongodb,postgres,prisma" />
 </p>
 
-### AI Engineering
-<p>
-  <img src="https://skillicons.dev/icons?i=openai,claude,cloude-cpde" />
-</p>
-
 ### DevOps & Cloud
 <p>
   <img src="https://skillicons.dev/icons?i=git,github,docker,githubactions,vercel,aws" />
