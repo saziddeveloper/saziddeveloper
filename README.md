@@ -197,6 +197,6 @@ Explore All Repositories →
 
 ### `BUILD • BREAK • LEARN • REBUILD`
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0D0D0D&height=120&section=footer&text=SAZIDDEVELOPER&fontColor=D4AF37&fontSize=24&animation=fadeIn" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0D0D0D&height=120&section=footer&text=SAZIDDEVELOPER&fontColor=D4AF37&fontSize=24&animation=fadeIn&fontAlignY=70" />
 
 </div>
