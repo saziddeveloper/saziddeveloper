@@ -219,7 +219,7 @@
 
         <text
             x="55"
-            y="150"
+            y="180"
             class="label"
         >
             NAME
@@ -227,7 +227,7 @@
 
         <text
             x="220"
-            y="150"
+            y="180"
             class="value"
         >
             Ashaduzzaman Sazid
@@ -243,7 +243,7 @@
 
         <text
             x="55"
-            y="200"
+            y="230"
             class="label"
         >
             ROLE
@@ -251,10 +251,10 @@
 
         <text
             x="220"
-            y="200"
+            y="230"
             class="value"
         >
-            MERN Stack Developer
+            AI-Powered Full-Stack Software Engineer
         </text>
 
     </g>
@@ -267,7 +267,7 @@
 
         <text
             x="55"
-            y="250"
+            y="280"
             class="label"
         >
             LOCATION
@@ -275,10 +275,34 @@
 
         <text
             x="220"
-            y="250"
+            y="280"
             class="value"
         >
             Bangladesh
+        </text>
+
+    </g>
+    
+
+    <g
+        class="info-row"
+        style="animation-delay:0.40s"
+    >
+
+        <text
+            x="55"
+            y="330"
+            class="label"
+        >
+            OS
+        </text>
+
+        <text
+            x="220"
+            y="330"
+            class="value"
+        >
+            Fedora Linux
         </text>
 
     </g>
@@ -291,7 +315,7 @@
 
         <text
             x="55"
-            y="320"
+            y="410"
             class="label"
         >
             FRONTEND
@@ -299,10 +323,10 @@
 
         <text
             x="220"
-            y="320"
+            y="410"
             class="value"
         >
-            React • JavaScript • TypeScript • HTML • CSS • Tailwind
+            React • Next.js • TypeScript • JavaScript • Tailwind
         </text>
 
     </g>
@@ -315,7 +339,7 @@
 
         <text
             x="55"
-            y="395"
+            y="460"
             class="label"
         >
             BACKEND
@@ -323,10 +347,10 @@
 
         <text
             x="220"
-            y="395"
+            y="460"
             class="value"
         >
-            Node.js • Express.js • MongoDB
+            Node.js • Express.js • REST API
         </text>
 
     </g>
@@ -339,7 +363,7 @@
 
         <text
             x="55"
-            y="470"
+            y="510"
             class="label"
         >
             TOOLS
@@ -347,7 +371,7 @@
 
         <text
             x="220"
-            y="470"
+            y="510"
             class="value"
         >
             Git • GitHub • VS Code • Postman • npm • Vite
@@ -363,7 +387,7 @@
 
         <text
             x="55"
-            y="545"
+            y="560"
             class="label"
         >
             DESIGN
@@ -371,7 +395,7 @@
 
         <text
             x="220"
-            y="545"
+            y="560"
             class="value"
         >
             Figma • Canva
@@ -387,7 +411,7 @@
 
         <text
             x="55"
-            y="620"
+            y="610"
             class="label"
         >
             DEPLOY
@@ -395,7 +419,7 @@
 
         <text
             x="220"
-            y="620"
+            y="610"
             class="value"
         >
             Vercel • Netlify • GitHub Actions
@@ -438,7 +462,7 @@
             y="750"
             class="label"
         >
-            WEB
+            PORTFOLIO
         </text>
 
         <text

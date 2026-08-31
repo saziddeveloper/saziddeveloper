@@ -20,15 +20,28 @@ MUTED = "#777777"
 
 PROFILE = {
     "name": "Ashaduzzaman Sazid",
-    "role": "MERN Stack Developer",
+    "role": "AI-Powered Full-Stack Software Engineer",
     "location": "Bangladesh",
+    "os": "Fedora Linux",
 
-    "frontend": (
-        "React • JavaScript • TypeScript • HTML • CSS • Tailwind"
+        "frontend": (
+        "React • Next.js • TypeScript • JavaScript • Tailwind"
     ),
 
     "backend": (
-        "Node.js • Express.js • MongoDB"
+        "Node.js • Express.js • REST API"
+    ),
+
+    "database": (
+        "MongoDB • PostgreSQL • Prisma • MySQL"
+    ),
+
+    "ai": (
+        "LLMs • RAG • AI Agents • Embeddings • Tool Calling"
+    ),
+
+    "cloud": (
+        "Vercel • AWS • Docker • GitHub Actions"
     ),
 
     "tools": (
@@ -95,7 +108,7 @@ def create_svg():
         make_row(
             "NAME",
             PROFILE["name"],
-            150,
+            180,
             0.15,
         )
     )
@@ -104,7 +117,7 @@ def create_svg():
         make_row(
             "ROLE",
             PROFILE["role"],
-            200,
+            230,
             0.25,
         )
     )
@@ -113,8 +126,17 @@ def create_svg():
         make_row(
             "LOCATION",
             PROFILE["location"],
-            250,
+            280,
             0.35,
+        )
+    )
+
+    rows.append(
+        make_row(
+            "OS",
+            PROFILE["os"],
+            330,
+            0.40,
         )
     )
 
@@ -122,7 +144,7 @@ def create_svg():
         make_row(
             "FRONTEND",
             PROFILE["frontend"],
-            320,
+            410,
             0.45,
         )
     )
@@ -131,7 +153,7 @@ def create_svg():
         make_row(
             "BACKEND",
             PROFILE["backend"],
-            395,
+            460,
             0.55,
         )
     )
@@ -140,7 +162,7 @@ def create_svg():
         make_row(
             "TOOLS",
             PROFILE["tools"],
-            470,
+            510,
             0.65,
         )
     )
@@ -149,7 +171,7 @@ def create_svg():
         make_row(
             "DESIGN",
             PROFILE["design"],
-            545,
+            560,
             0.75,
         )
     )
@@ -158,7 +180,7 @@ def create_svg():
         make_row(
             "DEPLOY",
             PROFILE["deployment"],
-            620,
+            610,
             0.85,
         )
     )
@@ -174,7 +196,7 @@ def create_svg():
 
     rows.append(
         make_row(
-            "WEB",
+            "PORTFOLIO",
             PROFILE["portfolio"],
             750,
             1.05,
