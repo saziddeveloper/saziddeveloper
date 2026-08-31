@@ -1,6 +1,6 @@
 <div align="center">
 
-# ❗ SAZID ❗
+# ❗ SAZIDDEVELOPER ❗
 
 ### MERN Stack Developer
 
@@ -17,7 +17,7 @@ Building modern web experiences with JavaScript, React & Node.js.
 
 ---
 
-## `01 // THE CIPHER STACK`
+## `01 // SAZIDDEVELOPER`
 
 <table>
 <tr>
