@@ -7,10 +7,10 @@
 Building scalable web applications and intelligent software with TypeScript, React, Next.js, Node.js, PostgreSQL, AI Agents, RAG, Cloud & DevOps.
 
 <a href="https://saziddeveloper.github.io/">
-  <img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=google-chrome&logoColor=black" style="height:36px"/>
-</a>
+  <img src="https://img.shields.io/badge/Portfolio-D4AF37?style=for-the-badge&logo=google-chrome&logoColor=black" style="height:32px"/>
+</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/saziddeveloper">
-  <img src="https://img.shields.io/badge/GitHub-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" style="height:36px"/>
+  <img src="https://img.shields.io/badge/GitHub-0D0D0D?style=for-the-badge&logo=github&logoColor=D4AF37" style="height:32px"/>
 </a>
 
 </div>
