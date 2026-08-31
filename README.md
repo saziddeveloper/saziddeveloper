@@ -60,21 +60,33 @@ My current focus is improving my full-stack engineering skills and turning ideas
 ## `04 // TECH ARSENAL`
 
 ### Frontend
-
 <p>
-<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwind,vite" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind" />
 </p>
 
-### Backend & Database
-
+### Backend
 <p>
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb" />
+  <img src="https://skillicons.dev/icons?i=nodejs,express" />
 </p>
 
-### Tools & Platforms
-
+### Database
 <p>
-<img src="https://skillicons.dev/icons?i=git,github,vscode,postman,figma,vercel,netlify" />
+  <img src="https://skillicons.dev/icons?i=mongodb,postgres,prisma" />
+</p>
+
+### AI Engineering
+<p>
+  <img src="https://skillicons.dev/icons?i=openai" />
+</p>
+
+### DevOps & Cloud
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,docker,githubactions,vercel,aws" />
+</p>
+
+### Tools
+<p>
+  <img src="https://skillicons.dev/icons?i=vscode,postman,figma,npm,linux" />
 </p>
 
 ---
