@@ -94,71 +94,51 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 ---
 
-## `05 // FEATURED PROJECTS`
+<div align="center">
 
-<table>
-<tr>
+### Featured PROJECTS` — The Best of SAZIDDEVELOPER
+<br/>
 
-<td width="50%" valign="top">
-
-### Banking System
-
-A JavaScript-based banking system project demonstrating frontend logic, user interactions and multi-page web development.
-
-**Stack:** JavaScript · HTML · CSS
-
-<a href="https://github.com/saziddeveloper/SIMPLE-BANKING-SYSTEM">
-View Repository →
-</a>
-
-</td>
-
-<td width="50%" valign="top">
-
-### G3 Architects
-
-A responsive architecture company website focused on clean layout, visual presentation and responsive web design.
-
-**Stack:** HTML · CSS
-
-<a href="https://github.com/saziddeveloper/G3-ARCHITECTS">
-View Repository →
-</a>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td width="50%" valign="top">
-
-### Flower Shop
-
-A flower-shop website project focused on frontend layout, styling and responsive web presentation.
-
-**Stack:** HTML · CSS
-
-<a href="https://github.com/saziddeveloper/FLOWER-SHOP">
-View Repository →
-</a>
-
-</td>
-
-<td width="50%" valign="top">
-
-### More Projects
-
-I maintain additional projects covering web development, frontend experiments and programming practice.
-
-<a href="https://github.com/saziddeveloper?tab=repositories">
-Explore All Repositories →
-</a>
-
-</td>
-
-</tr>
+<table border="0">
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://github.com/Hxni786/-A-Restaurant-App-Spice-with-Hassan" target="_blank">
+        <img src="https://raw.githubusercontent.com/Hxni786/Hxni-Ecommerce-Store/main/profile_docs/assets/spice_hassan_mockup.png" width="100%" />
+      </a>
+      <br/>
+      <b>Spice with Hassan</b><br/>
+      <sub>Boutique Restaurant and Ordering Management</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://github.com/Hxni786/Food-Delivery-app-2" target="_blank">
+        <img src="https://raw.githubusercontent.com/Hxni786/Food-Delivery-app-2/main/hero.png" width="100%" />
+      </a>
+      <br/>
+      <b>Nixh Food 2.0</b><br/>
+      <sub>Scalable Order Tracking and Delivery Ecosystem</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://github.com/Hxni786/Expense-Tracker" target="_blank">
+        <img src="https://raw.githubusercontent.com/Hxni786/Hxni-Ecommerce-Store/main/profile_docs/assets/hxni_finance_mockup.png" width="100%" />
+      </a>
+      <br/>
+      <b>Hxni Finance</b><br/>
+      <sub>Advanced Personal Asset and Expense Management</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://github.com/Hxni786/Hxnix-Social-Media-App" target="_blank">
+        <img src="https://raw.githubusercontent.com/Hxni786/Hxni-Ecommerce-Store/main/profile_docs/assets/hxnix_social_mockup.png" width="100%" />
+      </a>
+      <br/>
+      <b>Hxnix Social</b><br/>
+      <sub>Modern Interactive Community Engine</sub>
+    </td>
+  </tr>
 </table>
+
+</div>
 
 ---
 
