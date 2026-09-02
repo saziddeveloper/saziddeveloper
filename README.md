@@ -175,7 +175,7 @@ Explore All Repositories →
 
 ---
 
-# 📊 GitHub Analytics
+## `07 // GitHub Analytics`#
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github" height="180" />
@@ -184,7 +184,7 @@ Explore All Repositories →
 
 ---
 
-# 🔥 Contribution Streak
+## `08 // Contribution Streak`##
 
 <p align="center">
   <img src="https://streak-stats.demolab.com/?user=saziddeveloper&hide_border=true" />
@@ -192,7 +192,7 @@ Explore All Repositories →
 
 ---
 
-# 📈 Contribution Activity
+## `09 // Contribution Activity`##
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=saziddeveloper&hide_border=true&area=true" width="100%" />
@@ -200,7 +200,7 @@ Explore All Repositories →
 
 ---
 
-# 🐍 Contribution Graph
+## `10 // Contribution Graph`##
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake Animation" />
@@ -208,19 +208,7 @@ Explore All Repositories →
 
 ---
 
-# 💼 What I Build
-
-```text
-Frontend Development       ████████████████████
-Backend Development        ██████████████████
-Full-Stack Applications    ███████████████████
-Problem Solving            █████████████████
-Learning & Experimenting   ████████████████████
-```
-
----
-
-# 📊 GitHub Profile
+## `11 // GitHub Profile`##
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=saziddeveloper" width="100%" />
@@ -228,7 +216,7 @@ Learning & Experimenting   █████████████████�
 
 ---
 
-## `07 // CONNECT`
+## `12 // CONNECT`
 
 <div align="center">
 
