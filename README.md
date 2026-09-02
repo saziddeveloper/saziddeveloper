@@ -17,19 +17,6 @@ Building scalable web applications and intelligent software with TypeScript, Rea
 
 ---
 
-```sh
-fahim@github:~$ whoami
-fahim
-
-fahim@github:~$ hostname
-github-profile
-
-fahim@github:~$ pwd
-/home/fahim
-```
-
----
-
 ## `01 // Pofile Info`
 
 <table>
@@ -179,6 +166,14 @@ Explore All Repositories →
 | `DEPLOYING` | Vercel • Docker • GitHub Actions • Cloud            |
 | `IMPROVING` | Software Architecture • Testing • Security          |
 | `GOAL`      | Becoming an AI-Powered Full-Stack Software Engineer |
+
+---
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=saziddeveloper&layout=compact&theme=dark)
+
+---
+
+![Fahim's GitHub stats](https://github-readme-stats.vercel.app/api/?username=saziddeveloper&show_icons=true&theme=dark)
 
 ---
 
