@@ -175,15 +175,7 @@ Explore All Repositories →
 
 ---
 
-## `07 // GitHub Analytics`
-
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github" alt="Sazid's GitHub Stats" /> </p>
-
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=saziddeveloper&layout=compact&langs_count=8&hide_border=true" alt="Sazid's Top Languages" /> </p>
-
----
-
-## `08 // Contribution Streak`
+## `07 // Contribution Streak`
 
 <p align="center">
   <img src="https://streak-stats.demolab.com/?user=saziddeveloper&hide_border=true" />
@@ -191,15 +183,7 @@ Explore All Repositories →
 
 ---
 
-## `09 // Contribution Activity`
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=saziddeveloper&hide_border=true&area=true" width="100%" />
-</p>
-
----
-
-## `10 // Contribution Graph`
+## `08 // Contribution Graph`
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake Animation" />
@@ -207,7 +191,7 @@ Explore All Repositories →
 
 ---
 
-## `11 // GitHub Profile`
+## `09 // GitHub Profile`
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=saziddeveloper" width="100%" />
@@ -215,7 +199,7 @@ Explore All Repositories →
 
 ---
 
-## `12 // CONNECT`
+## `10 // CONNECT`
 
 <div align="center">
 
