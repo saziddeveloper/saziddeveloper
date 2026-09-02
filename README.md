@@ -93,7 +93,7 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 </p>
 
 ### AI Assisted Coding 
-<p>
+<div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <title>Claude Code</title>
   <path clip-rule="evenodd"
@@ -101,7 +101,7 @@ My goal is to build software that isn't just functional, but scalable, maintaina
         fill="#D97757"
         fill-rule="evenodd" />
   </svg>
-</p>
+</div>
 
 ---
 
