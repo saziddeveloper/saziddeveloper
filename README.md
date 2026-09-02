@@ -185,10 +185,6 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 ---
 
-<div align="center">
-
----
-
 ## `10 // CONNECT`
 
 <div align="center">
