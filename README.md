@@ -177,10 +177,9 @@ Explore All Repositories →
 
 ## `07 // GitHub Analytics`
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github" height="180" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=saziddeveloper&layout=compact&langs_count=8&hide_border=true" height="180" />
-</p>
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&rank_icon=github" alt="Sazid's GitHub Stats" /> </p>
+
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=saziddeveloper&layout=compact&langs_count=8&hide_border=true" alt="Sazid's Top Languages" /> </p>
 
 ---
 
