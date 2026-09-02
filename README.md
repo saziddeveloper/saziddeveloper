@@ -94,9 +94,9 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 ---
 
-<div align="center">
+## `04 // Featured PROJECTS`
 
-### Featured PROJECTS` — The Best of SAZIDDEVELOPER
+<div align="center">
 <br/>
 
 <table border="0">
