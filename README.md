@@ -92,11 +92,6 @@ My goal is to build software that isn't just functional, but scalable, maintaina
   <img src="https://skillicons.dev/icons?i=vscode,postman,figma,npm,linux" />
 </p>
 
-### AI Assisted Coding
-<p>
-  <img width="5%" src="https://cdn.jsdelivr.net/npm/@thesvg/icons/icons/claude-code.svg" alt="Claude Code" />
-</p>
-
 ---
 
 ## `05 // FEATURED PROJECTS`
