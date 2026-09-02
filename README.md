@@ -194,7 +194,12 @@ Explore All Repositories →
 ## `09 // GitHub Profile`
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=saziddeveloper" width="100%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=saziddeveloper&theme=github_dark" alt="Fahim's GitHub contribution summary" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=saziddeveloper&theme=github_dark" alt="Fahim's GitHub repository stats" width="49%" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=saziddeveloper&theme=github_dark" alt="Fahim's repository language statistics" width="49%" />
 </p>
 
 ---
