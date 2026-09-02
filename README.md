@@ -158,7 +158,6 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 ## `07 // Contribution Streak`
 
 <div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" />
   <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=saziddeveloper&theme=tokyonight&hide_border=true" />
 </div>
 
