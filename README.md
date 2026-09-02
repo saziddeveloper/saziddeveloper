@@ -175,62 +175,6 @@ Explore All Repositories →
 
 ---
 
-# 👋 Assalamualaikum, I'm Ashaduzzaman Sazid
-
-### `MERN Stack Developer | Front-End & Back-End Specialist`
-
-I’m a developer focused on building modern, responsive, and practical web applications with the **MERN Stack**.
-
-I enjoy turning ideas into functional products, learning new technologies, solving problems, and continuously improving my development skills.
-
-<p align="center">
-  <a href="https://github.com/saziddeveloper">
-    <img src="https://img.shields.io/github/followers/saziddeveloper?label=Followers&style=for-the-badge" />
-  </a>
-  <a href="https://github.com/saziddeveloper?tab=repositories">
-    <img src="https://img.shields.io/badge/Repositories-Live-181717?style=for-the-badge&logo=github" />
-  </a>
-  <a href="https://github.com/saziddeveloper?tab=stars">
-    <img src="https://img.shields.io/github/stars/saziddeveloper?style=for-the-badge&logo=github" />
-  </a>
-</p>
-
----
-
-## 🧑‍💻 About Me
-
-* 💻 MERN Stack Developer
-* 🎨 Front-End & Back-End Development
-* 🌱 Currently improving my full-stack development skills
-* 🚀 Building projects to strengthen real-world development experience
-* 🧠 Learning Mode: ON
-* 📍 Bangladesh
-* 🌐 Portfolio: [saziddeveloper.github.io](https://saziddeveloper.github.io)
-
----
-
-## 🛠️ Tech Stack
-
-### Front-End
-
-<p>
-  <img src="https://skillicons.dev/icons?i=html,css,js,react,bootstrap,tailwind" />
-</p>
-
-### Back-End
-
-<p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb" />
-</p>
-
-### Tools & Technologies
-
-<p>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,npm,figma" />
-</p>
-
----
-
 # 📊 GitHub Analytics
 
 <p align="center">
@@ -264,19 +208,6 @@ I enjoy turning ideas into functional products, learning new technologies, solvi
 
 ---
 
-# 📌 Featured Projects
-
-<p align="center">
-  <a href="https://github.com/saziddeveloper/saziddeveloper.github.io">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=saziddeveloper&repo=saziddeveloper.github.io&hide_border=true" />
-  </a>
-  <a href="https://github.com/saziddeveloper/SIMPLE-BANKING-SYSTEM">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=saziddeveloper&repo=SIMPLE-BANKING-SYSTEM&hide_border=true" />
-  </a>
-</p>
-
----
-
 # 💼 What I Build
 
 ```text
@@ -294,64 +225,6 @@ Learning & Experimenting   █████████████████�
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=saziddeveloper" width="100%" />
 </p>
-
----
-
-# 🤝 Connect With Me
-
-<p align="center">
-  <a href="https://github.com/saziddeveloper">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://saziddeveloper.github.io">
-    <img src="https://img.shields.io/badge/Portfolio-Visit-0A0A0A?style=for-the-badge&logo=google-chrome&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/saziddeveloper">
-    <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-</p>
-
----
-
-## ⚡ Current Focus
-
-```text
-MERN Stack
-├── React
-├── Node.js
-├── Express.js
-├── MongoDB
-├── REST APIs
-├── Authentication
-├── Responsive UI
-└── Full-Stack Application Architecture
-```
-
----
-
-<p align="center">
-  <b>💡 Learn → Build → Break → Fix → Improve → Repeat</b>
-</p>
-
-<p align="center">
-  <i>Thanks for visiting my GitHub profile.</i>
-</p>
-
-<!--
-GitHub username: saziddeveloper
-
-Dynamic widgets used in this README:
-- GitHub Readme Stats
-- Top Languages
-- GitHub Streak
-- GitHub Activity Graph
-- Contribution Graph
-- Profile Summary
-
-These widgets retrieve GitHub data dynamically, so statistics do not need
-to be manually updated in this README.
--->
-
 
 ---
 
