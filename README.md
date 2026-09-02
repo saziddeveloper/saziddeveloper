@@ -175,14 +175,6 @@ Explore All Repositories →
 
 ---
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=saziddeveloper&layout=compact&theme=dark)
-
----
-
-![Fahim's GitHub stats](https://github-readme-stats.vercel.app/api/?username=saziddeveloper&show_icons=true&theme=dark)
-
----
-
 <h2 align="center">📊 GitHub Analytics</h2>
 
 <table>
@@ -192,7 +184,7 @@ Explore All Repositories →
 ### 📈 GitHub Stats
 
 <img
-  src="https://github-readme-stats.vercel.app/api?username=SAZIDDEVELOPER&show_icons=true&theme=dark&hide_border=true"
+  src="https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&theme=dark&hide_border=true"
   width="100%"
 />
 
@@ -203,7 +195,7 @@ Explore All Repositories →
 ### 💻 Top Languages
 
 <img
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=SAZIDDEVELOPER&layout=donut&theme=dark&hide_border=true"
+  src="https://github-readme-stats.vercel.app/api/top-langs/?username=saziddeveloper&layout=donut&theme=dark&hide_border=true"
   width="100%"
 />
 
@@ -215,7 +207,7 @@ Explore All Repositories →
 
 <p align="center">
 <img
-  src="https://github-readme-activity-graph.vercel.app/graph?username=SAZIDDEVELOPER&theme=github-compact&hide_border=true"
+  src="https://github-readme-activity-graph.vercel.app/graph?username=saziddeveloper&theme=github-compact&hide_border=true"
   width="100%"
 />
 </p>
