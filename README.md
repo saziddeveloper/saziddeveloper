@@ -1,5 +1,5 @@
 <div align="center">
-<div align="center">
+
 ```
  ███████  █████  ███████ ██ ██████  ██████  ███████ ██    ██ ███████ ██       ██████  ██████  ███████ ██████ 
  ██      ██   ██    ███  ██ ██   ██ ██   ██ ██      ██    ██ ██      ██      ██    ██ ██   ██ ██      ██   ██
@@ -7,7 +7,7 @@
       ██ ██   ██  ███    ██ ██   ██ ██   ██ ██       ██  ██  ██      ██      ██    ██ ██      ██      ██   ██
  ███████ ██   ██ ███████ ██ ██████  ██████  ███████   ████   ███████ ███████  ██████  ██      ███████ ██   ██
 ```
-</div>
+
 ### AI-Powered Full-Stack Software Engineer
 
 Building scalable web applications and intelligent software with TypeScript, React, Next.js, Node.js, PostgreSQL, AI Agents, RAG, Cloud & DevOps.
