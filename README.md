@@ -181,12 +181,9 @@ Explore All Repositories →
 <tr>
 <td width="50%" align="center">
 
-### 📈 GitHub Stats
+## GitHub Stats
 
-<img
-  src="https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&theme=dark&hide_border=true"
-  width="100%"
-/>
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=saziddeveloper&show_icons=true&theme=dark)
 
 </td>
 
