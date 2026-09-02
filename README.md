@@ -17,6 +17,19 @@ Building scalable web applications and intelligent software with TypeScript, Rea
 
 ---
 
+```sh
+fahim@github:~$ whoami
+fahim
+
+fahim@github:~$ hostname
+github-profile
+
+fahim@github:~$ pwd
+/home/fahim
+```
+
+---
+
 ## `01 // Pofile Info`
 
 <table>
