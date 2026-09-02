@@ -183,6 +183,45 @@ Explore All Repositories →
 
 ---
 
+<h2 align="center">📊 GitHub Analytics</h2>
+
+<table>
+<tr>
+<td width="50%" align="center">
+
+### 📈 GitHub Stats
+
+<img
+  src="https://github-readme-stats.vercel.app/api?username=SAZIDDEVELOPER&show_icons=true&theme=dark&hide_border=true"
+  width="100%"
+/>
+
+</td>
+
+<td width="50%" align="center">
+
+### 💻 Top Languages
+
+<img
+  src="https://github-readme-stats.vercel.app/api/top-langs/?username=SAZIDDEVELOPER&layout=donut&theme=dark&hide_border=true"
+  width="100%"
+/>
+
+</td>
+</tr>
+</table>
+
+<h2 align="center">🔥 Contribution Activity</h2>
+
+<p align="center">
+<img
+  src="https://github-readme-activity-graph.vercel.app/graph?username=SAZIDDEVELOPER&theme=github-compact&hide_border=true"
+  width="100%"
+/>
+</p>
+
+---
+
 ## `07 // CONNECT`
 
 <div align="center">
