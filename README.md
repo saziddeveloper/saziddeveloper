@@ -155,15 +155,23 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 ---
 
-## `07 // Contribution Streak`
+## `07 // LeetCode Statistics`
+
+<a href="https://leetcode.com/u/saziddeveloper/">
+<img src="https://leetcard.jacoblin.cool/saziddeveloper?theme=dark&font=Karma&ext=heatmap" width="69%" alt="LeetCode Statistics"/>
+</a>
+
+---
+
+## `08 // Contribution Streak`
 
 <div align="center">
-  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=saziddeveloper&theme=tokyonight&hide_border=true" />
+  <img width="69%" src="https://github-readme-streak-stats.herokuapp.com/?user=saziddeveloper&theme=tokyonight&hide_border=true" />
 </div>
 
 ---
 
-## `08 // Contribution Graph`
+## `09 // Contribution Graph`
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake Animation" />
@@ -171,7 +179,7 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 ---
 
-## `09 // GitHub Profile`
+## `10 // GitHub Profile`
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=saziddeveloper&theme=github_dark" alt="Fahim's GitHub contribution summary" width="100%" />
@@ -184,7 +192,7 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 ---
 
-## `10 // CONNECT`
+## `11 // CONNECT`
 
 <div align="center">
 
