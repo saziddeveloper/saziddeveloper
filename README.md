@@ -159,7 +159,7 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 <div align="center">
 <a href="https://leetcode.com/u/saziddeveloper/">
-<img src="https://leetcard.jacoblin.cool/saziddeveloper?theme=dark&font=Karma&ext=heatmap" width="79%" height="50%" alt="LeetCode Statistics"/>
+<img src="https://leetcard.jacoblin.cool/saziddeveloper?theme=dark&font=Karma&ext=heatmap" width="69%" height="50%" alt="LeetCode Statistics"/>
 </a>
 </div>
 
