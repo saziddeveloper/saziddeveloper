@@ -214,6 +214,6 @@ My goal is to build software that isn't just functional, but scalable, maintaina
 
 ### `BUILD • BREAK • LEARN • REBUILD`
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0D0D0D&height=120&section=footer&text=SAZIDDEVELOPER&fontColor=D4AF37&fontSize=24&animation=fadeIn&fontAlignY=70" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=59503a&height=120&section=footer&text=SAZIDDEVELOPER&fontColor=D4AF37&fontSize=24&animation=fadeIn&fontAlignY=70" />
 
 </div>
