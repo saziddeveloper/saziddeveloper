@@ -114,7 +114,7 @@
     y="46"
     class="metric-value"
 >
-    40
+    43
 </text>
 
 
@@ -2286,7 +2286,7 @@
             </g>
             
             <g>
-                <title>2025-12-30 — 1 contributions</title>
+                <title>2025-12-30 — 2 contributions</title>
 
                 <rect
                     x="223"
@@ -2294,7 +2294,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#51451C"
+                    fill="#8F7727"
                     class="cell"
                 >
                     <animate
@@ -2309,7 +2309,7 @@
             </g>
             
             <g>
-                <title>2025-12-31 — 1 contributions</title>
+                <title>2025-12-31 — 2 contributions</title>
 
                 <rect
                     x="223"
@@ -2317,7 +2317,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#51451C"
+                    fill="#8F7727"
                     class="cell"
                 >
                     <animate
@@ -3206,7 +3206,7 @@
             </g>
             
             <g>
-                <title>2026-02-08 — 2 contributions</title>
+                <title>2026-02-08 — 4 contributions</title>
 
                 <rect
                     x="307"
@@ -3214,7 +3214,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#8F7727"
+                    fill="#D4AF37"
                     class="cell"
                 >
                     <animate
@@ -7668,7 +7668,7 @@
             </g>
             
             <g>
-                <title>2026-08-21 — 2 contributions</title>
+                <title>2026-08-21 — 4 contributions</title>
 
                 <rect
                     x="685"
@@ -7676,7 +7676,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#8F7727"
+                    fill="#D4AF37"
                     class="cell"
                 >
                     <animate
@@ -7714,7 +7714,7 @@
             </g>
             
             <g>
-                <title>2026-08-23 — 1 contributions</title>
+                <title>2026-08-23 — 2 contributions</title>
 
                 <rect
                     x="699"
@@ -7722,7 +7722,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#51451C"
+                    fill="#8F7727"
                     class="cell"
                 >
                     <animate
@@ -8036,7 +8036,7 @@
             </g>
             
             <g>
-                <title>2026-09-06 — 1 contributions</title>
+                <title>2026-09-06 — 2 contributions</title>
 
                 <rect
                     x="727"
@@ -8044,7 +8044,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#51451C"
+                    fill="#8F7727"
                     class="cell"
                 >
                     <animate
@@ -8059,7 +8059,7 @@
             </g>
             
             <g>
-                <title>2026-09-07 — 2 contributions</title>
+                <title>2026-09-07 — 3 contributions</title>
 
                 <rect
                     x="727"
@@ -8067,7 +8067,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#8F7727"
+                    fill="#D4AF37"
                     class="cell"
                 >
                     <animate
@@ -8082,7 +8082,7 @@
             </g>
             
             <g>
-                <title>2026-09-08 — 1 contributions</title>
+                <title>2026-09-08 — 2 contributions</title>
 
                 <rect
                     x="727"
@@ -8090,7 +8090,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#51451C"
+                    fill="#8F7727"
                     class="cell"
                 >
                     <animate
@@ -8519,7 +8519,7 @@
             </g>
             
             <g>
-                <title>2026-09-27 — 2 contributions</title>
+                <title>2026-09-27 — 0 contributions</title>
 
                 <rect
                     x="769"
@@ -8527,7 +8527,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#8F7727"
+                    fill="#17140B"
                     class="cell"
                 >
                     <animate
@@ -8542,7 +8542,7 @@
             </g>
             
             <g>
-                <title>2026-09-28 — 1 contributions</title>
+                <title>2026-09-28 — 0 contributions</title>
 
                 <rect
                     x="769"
@@ -8550,7 +8550,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#51451C"
+                    fill="#17140B"
                     class="cell"
                 >
                     <animate
@@ -8565,7 +8565,7 @@
             </g>
             
             <g>
-                <title>2026-09-29 — 4 contributions</title>
+                <title>2026-09-29 — 0 contributions</title>
 
                 <rect
                     x="769"
@@ -8573,7 +8573,7 @@
                     width="11"
                     height="11"
                     rx="2.5"
-                    fill="#D4AF37"
+                    fill="#17140B"
                     class="cell"
                 >
                     <animate
@@ -8908,7 +8908,7 @@
     y="295"
     class="subtitle"
 >
-    Longest streak: 4 days
+    Longest streak: 3 days
 </text>
 
 <text
